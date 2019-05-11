@@ -1,5 +1,4 @@
 # TrainsInKiwiland
-# TrainsInKiwiland
 
 Problem: Trains
 
