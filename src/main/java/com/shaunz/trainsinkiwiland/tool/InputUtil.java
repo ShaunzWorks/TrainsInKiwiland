@@ -1,6 +1,6 @@
 package com.shaunz.trainsinkiwiland.tool;
 
-import com.shaunz.trainsinkiwiland.entity.Graph;
+import com.shaunz.structure.graph.Graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +35,6 @@ public class InputUtil {
             weight = 0;
         }
 
-        return new Graph(from,to,weight);
+        return null;
     }
 }
