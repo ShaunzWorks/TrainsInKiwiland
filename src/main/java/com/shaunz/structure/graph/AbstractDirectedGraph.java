@@ -23,6 +23,8 @@ public abstract class AbstractDirectedGraph<T> implements Graph<T>, Serializable
         vertices.put(vertxLabel, new VertexImpl<>(vertxLabel));
     }
 
+    public abstract boolean add(T from, T to, Double weight);
+    public abstract boolean add(T from, T to);
     public abstract boolean addEdge(T begin, T end, Double edgeWeight);
 
     public abstract boolean addEdge(T begin, T end);

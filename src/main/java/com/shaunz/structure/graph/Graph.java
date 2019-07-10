@@ -8,6 +8,8 @@ import java.util.Queue;
 import java.util.Stack;
 
 public interface Graph<T> {
+    boolean add(T from,T to, Double weight);
+    boolean add(T from,T to);
     void addVertex(T vertxLabel);
     boolean addEdge(T begin, T end, Double edgeWeight);
     boolean addEdge(T begin, T end);

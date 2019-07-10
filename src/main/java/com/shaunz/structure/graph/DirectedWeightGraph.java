@@ -1,6 +1,7 @@
 package com.shaunz.structure.graph;
 
 import com.shaunz.structure.graph.vertex.Vertex;
+import com.shaunz.structure.graph.vertex.VertexImpl;
 
 import java.util.*;
 
@@ -9,6 +10,21 @@ public class DirectedWeightGraph<T> extends AbstractDirectedGraph<T> {
 
     public DirectedWeightGraph() {
         vertices = new LinkedHashMap<T, Vertex<T>>();
+    }
+
+    public boolean add(T from, T to, Double weight) {
+        if(!this.vertices.containsKey(from)){
+            this.vertices.put(from,new VertexImpl<>(from));
+        }
+        if(!this.vertices.containsKey(to)){
+            this.vertices.put(to,new VertexImpl<>(to));
+        }
+        return addEdge(from,to,weight);
+    }
+
+    @Deprecated
+    public boolean add(T from, T to) {
+        return false;
     }
 
     @Override

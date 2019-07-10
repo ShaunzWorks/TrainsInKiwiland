@@ -1,12 +1,28 @@
 package com.shaunz.structure.graph;
 
 import com.shaunz.structure.graph.vertex.Vertex;
+import com.shaunz.structure.graph.vertex.VertexImpl;
 
 import java.util.*;
 
 public class DirectedRingGraph<T> extends AbstractDirectedGraph<T>{
     public DirectedRingGraph() {
         vertices = new LinkedHashMap<T, Vertex<T>>();
+    }
+
+    @Deprecated
+    public boolean add(T from, T to, Double weight) {
+        return false;
+    }
+
+    public boolean add(T from, T to) {
+        if(!this.vertices.containsKey(from)){
+            this.vertices.put(from,new VertexImpl<>(from));
+        }
+        if(!this.vertices.containsKey(to)){
+            this.vertices.put(to,new VertexImpl<>(to));
+        }
+        return addEdge(from,to);
     }
 
     @Override

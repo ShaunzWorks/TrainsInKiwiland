@@ -1,6 +1,8 @@
 package com.shaunz.structure.graph;
 
 import com.shaunz.structure.graph.vertex.Vertex;
+import com.shaunz.structure.graph.vertex.VertexImpl;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -12,6 +14,20 @@ public class DirectedGraph<T> extends AbstractDirectedGraph<T> {
         vertices = new LinkedHashMap<T, Vertex<T>>();
     }
 
+    @Deprecated
+    public boolean add(T from, T to, Double weight) {
+        return false;
+    }
+
+    public boolean add(T from, T to) {
+        if(!this.vertices.containsKey(from)){
+            this.vertices.put(from,new VertexImpl<>(from));
+        }
+        if(!this.vertices.containsKey(to)){
+            this.vertices.put(to,new VertexImpl<>(to));
+        }
+        return addEdge(from,to);
+    }
 
     @Override
     public boolean addEdge(T begin, T end) {
