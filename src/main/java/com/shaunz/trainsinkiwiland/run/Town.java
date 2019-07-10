@@ -100,7 +100,7 @@ public class Town {
         int result = 0;
         for (int i = 0,size = allPaths.size();i < size;i ++){
             Stack<String> path = allPaths.get(i);
-            if(path.size() <= 3){
+            if(path.size() <= 4){
                 result ++;
             }
         }
@@ -113,10 +113,11 @@ public class Town {
         int result = 0;
         for (int i = 0,size = allPaths.size();i < size;i ++){
             Stack<String> path = allPaths.get(i);
-            if(path.size() == 3){
+            if(path.size() == 5){
                 result ++;
             }
         }
+        //TODO
         logger.info("Output #7: " + result);
     }
 
@@ -132,6 +133,10 @@ public class Town {
         Stack<String> path = new Stack<>();
         Double distance = graph.getShortestPath("B","B", path);
         logger.info("Output #9: " + distance);
+    }
+
+    public void question10(){
+        //TODO
     }
 
 }
